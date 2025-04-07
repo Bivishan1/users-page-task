@@ -1,9 +1,9 @@
-import ProfileList from "./profile/page";
+import ProfilePage from "./profile/page";
 
 export default function Home() {
   return (
     <>
-    <ProfileList/>
+    <ProfilePage/>
     </>
   );
 }
