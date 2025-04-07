@@ -1,18 +1,10 @@
 // app/profiles/[id]/page.tsx
 import { notFound } from "next/navigation";
 import ProfileCard from "../components/ProfileCard";
-import { getUsers, getUserById } from "@/lib/api";
+import { getUserById } from "@/lib/api";
 
-export async function generateStaticParams() {
-  const users = await getUsers();
-  return users.map((user) => ({ id: user.id.toString() }));
-}
 
-export default async function ProfileDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function ProfileDetailsPage({  params,}: {  params: { id: string };}) {
     // Fetch user data based on the ID from params   
     const { id } = await params;
 
