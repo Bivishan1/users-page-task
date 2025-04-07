@@ -13,8 +13,10 @@ export default async function ProfileDetailsPage({
 }: {
   params: { id: string };
 }) {
-    
-  const user = await getUserById(params.id).catch(() => notFound());
+    // Fetch user data based on the ID from params   
+    const { id } = await params;
+
+  const user = await getUserById(id).catch(() => notFound());
 
   if (!user) return <div>Loading...</div>;
 
