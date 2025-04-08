@@ -6,7 +6,8 @@ const ProfileList = async () => {
     const users = await getUsers();
 
   return (
-    <div>
+    <>
+    <h1 className="text-4xl font-bold text-center mb-8">Total Users: {users.length}</h1>
       <table className="table-fixed border-collapse border border-gray-400">
         <thead>
           <tr className="bg-gray-100">
@@ -24,7 +25,7 @@ const ProfileList = async () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
